@@ -244,62 +244,29 @@ const arrayMethods = (array, option) => {
       resultado = array.reduce((acc, num) => {
         acc + num;
       }, 0);
-      break;
     // Os numeros pares dentro da array
     case 2:
       resultado = array.filter((n) => {
         n % 2 === 0;
       });
-      break;
     // A media dos numeros
     case 3:
       resultado = array.reduce((acc, num) => {
         acc + num;
       }, 0);
       resultado = resultado / array.length;
-      break;
     case 4:
-      // A ordem crescente dos numeros
-      resultado = array.sort((a, b) => a - b);
-      break;
+    // A ordem crescente dos numeros
+      resultado = array.sort((a,b) => a - b);
     case 5:
       // Todos os numeros multiplicados por 2
-      resultado = array.map((numero) => {
-        return numero * 2;
+      array.map(numero => {
+        numero * 2
       });
-      break;
+      return array;
   }
-  return resultado;
 };
 
 const listaNumeros = [12, 5, 3, 9];
 
 console.log(arrayMethods(listaNumeros, 2));
-
-// Crie uma função que retorne a quantidade de itens de um array
-
-const qtdItensArray = (array) => {
-  return array.length;
-};
-
-// Crie uma função que retorne todos os números pares deste array [1,2,3,4,5,6,7,8,9,10]
-
-const numerosPares = (array) => {
-  return array.filter((n) => n % 2 === 0);
-};
-
-// Crie uma função que transforme frases de snake_case para camelCase
-
-// Crie uma função que retorne "true" caso todos os itens de um array obedecerem a uma condição
-
-// Crie uma função em que verifica a força da senha:
-// - Letra Maiuscula
-// - numero
-// - caractere especial
-// - minimo 8 careteres (obrigatorio)
-
-// forte: 4 requisitos
-// medio: pelo menos 3 requisitos
-// fraca: 2 requisitos
-// muito fraca: 1 requisito
-// invalida: 0 requisitos

@@ -290,6 +290,9 @@ const numerosPares = (array) => {
 
 // Crie uma função que transforme frases de snake_case para camelCase
 
+const camelCase = (frase) => {
+  
+}
 // Crie uma função que retorne "true" caso todos os itens de um array obedecerem a uma condição
 
 // Crie uma função em que verifica a força da senha:

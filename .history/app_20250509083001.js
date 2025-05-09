@@ -4,35 +4,36 @@ const readline = require("readline-sync");
 // Descubra o dia da semana
 
 const diasDaSemana = () => {
-  const numero = Number(readline.question("Digite um número de 1 a 7"));
-  let nomeDia = "";
-  switch (numero) {
-    case 1:
-      nomeDia = "Domingo";
-      break;
-    case 2:
-      nomeDia = "Segunda";
-      break;
-    case 3:
-      nomeDia = "Terça";
-      break;
-    case 4:
-      nomeDia = "Quarta";
-      break;
-    case 5:
-      nomeDia = "Quinta";
-      break;
-    case 6:
-      nomeDia = "Sexta";
-      break;
-    case 7:
-      nomeDia = "Sábado";
-      break;
-    default:
-      console.log("numero invalido, digite um numero de 1 a 7");
-  }
-  console.log(`o dia é ${nomeDia}`);
-};
+    const numero = Number(readline.question("Digite um número de 1 a 7"));
+    let nomeDia = "";
+    switch (numero) {
+        case 1:
+            nomeDia = "Domingo";
+            break;
+        case 2:
+            nomeDia = "Segunda";
+            break;
+        case 3:
+            nomeDia = "Terça";
+            break;
+        case 4:
+            nomeDia = "Quarta";
+            break;
+        case 5:
+            nomeDia = "Quinta";
+            break;
+        case 6:
+            nomeDia = "Sexta";
+            break;
+        case 7:
+            nomeDia = "Sábado";
+            break;
+        default:
+            console.log("numero invalido, digite um numero de 1 a 7");
+
+    }
+    console.log(`o dia é ${nomeDia}`);
+}
 // diasDaSemana()
 
 const diasDaSemana1 = () => {
@@ -160,7 +161,7 @@ const troca = () => {
 // troca();
 
 function removerVogais(str) {
-  return str.replace(/[aeiouAEIOU]/g, "");
+    return str.replace(/[aeiouAEIOU]/g, "");
 }
 let frase = readline.question("Digite uma frase para remover as vogais: ");
 let resultado = removerVogais(frase);
@@ -170,6 +171,7 @@ console.log("frase sem vogais:", resultado);
 // Dois números
 // operador aritmético
 // A partir desta função retorne o cálculo desejado com os dois números
+
 
 function calculadora(numero1, numero2, operadorAritmetico) {
   switch (operadorAritmetico) {
@@ -184,10 +186,10 @@ function calculadora(numero1, numero2, operadorAritmetico) {
         return "Operação Invalida";
       }
       return numero1 / numero2;
-    case "%":
-      return numero1 % numero2;
-    default:
-      return "operação invalida";
+      case "%":
+      return numero1 % numero2
+      default:
+        return "operação invalida"
   }
 }
 // const numero1 = readline.questionInt("Digite um numero:")
@@ -198,20 +200,22 @@ function calculadora(numero1, numero2, operadorAritmetico) {
 
 // Faça um programa que leia 7 nomes de pessoas e guarde-os em um vetor. No final, mostre uma listagem com todos os nomes informados, na ordem inversa daquela em que eles foram informados.
 const listaNomes = () => {
-  let nomes = [];
-  let nomesInvertido = [];
-  for (let i = 0; i < 7; i++) {
-    let nome = readline.question(`Digite o nome da pessoa ${i + 1}:`);
-    nomes.push(nome);
-  }
-  for (let i = 6; i >= 0; i--) {
-    nomesInvertido.push(nomes[i]);
-  }
-  console.log("Nome das pessoas inversamente:");
-  nomes.reverse().forEach((nome, index) => {
-    console.log(`${index + 1}${nome}`);
-  });
-};
+
+    let nomes = [];
+    let nomesInvertido = [];
+    for (let i = 0; i < 7; i++ ) {
+        let nome = readline.question(`Digite o nome da pessoa ${i+1}:`);
+        nomes.push(nome);
+    }
+    for (let i = 6; i >= 0; i--) {
+        nomesInvertido.push(nomes[i]);
+    }
+    console.log("Nome das pessoas inversamente:");
+    nomes.reverse().forEach((nome, index) => {
+        console.log(`${index + 1}${nome}`);
+    }
+);
+}
 
 // Crie um jogo de JoKenPo (Pedra-Papel-Tesoura)
 
@@ -236,70 +240,4 @@ const listaNomes = () => {
 // A ordem crescente dos numeros
 // Todos os numeros multiplicados por 2
 
-const arrayMethods = (array, option) => {
-  let resultado;
-  switch (option) {
-    // A soma dos numeros
-    case 1:
-      resultado = array.reduce((acc, num) => {
-        acc + num;
-      }, 0);
-      break;
-    // Os numeros pares dentro da array
-    case 2:
-      resultado = array.filter((n) => {
-        n % 2 === 0;
-      });
-      break;
-    // A media dos numeros
-    case 3:
-      resultado = array.reduce((acc, num) => {
-        acc + num;
-      }, 0);
-      resultado = resultado / array.length;
-      break;
-    case 4:
-      // A ordem crescente dos numeros
-      resultado = array.sort((a, b) => a - b);
-      break;
-    case 5:
-      // Todos os numeros multiplicados por 2
-      resultado = array.map((numero) => {
-        return numero * 2;
-      });
-      break;
-  }
-  return resultado;
-};
 
-const listaNumeros = [12, 5, 3, 9];
-
-console.log(arrayMethods(listaNumeros, 2));
-
-// Crie uma função que retorne a quantidade de itens de um array
-
-const qtdItensArray = (array) => {
-  return array.length;
-};
-
-// Crie uma função que retorne todos os números pares deste array [1,2,3,4,5,6,7,8,9,10]
-
-const numerosPares = (array) => {
-  return array.filter((n) => n % 2 === 0);
-};
-
-// Crie uma função que transforme frases de snake_case para camelCase
-
-// Crie uma função que retorne "true" caso todos os itens de um array obedecerem a uma condição
-
-// Crie uma função em que verifica a força da senha:
-// - Letra Maiuscula
-// - numero
-// - caractere especial
-// - minimo 8 careteres (obrigatorio)
-
-// forte: 4 requisitos
-// medio: pelo menos 3 requisitos
-// fraca: 2 requisitos
-// muito fraca: 1 requisito
-// invalida: 0 requisitos

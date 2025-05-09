@@ -268,8 +268,8 @@ const arrayMethods = (array, option) => {
         return numero * 2;
       });
       break;
-  }
-  return resultado;
+    }
+    return resultado;
 };
 
 const listaNumeros = [12, 5, 3, 9];
@@ -280,17 +280,17 @@ console.log(arrayMethods(listaNumeros, 2));
 
 const qtdItensArray = (array) => {
   return array.length;
-};
+}
 
 // Crie uma função que retorne todos os números pares deste array [1,2,3,4,5,6,7,8,9,10]
 
 const numerosPares = (array) => {
-  return array.filter((n) => n % 2 === 0);
-};
+  
+}
 
 // Crie uma função que transforme frases de snake_case para camelCase
 
-// Crie uma função que retorne "true" caso todos os itens de um array obedecerem a uma condição
+// Crie uma função que retorne "true" caso todos os itens de um array obedecerem a uma condição 
 
 // Crie uma função em que verifica a força da senha:
 // - Letra Maiuscula

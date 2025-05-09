@@ -256,20 +256,18 @@ const arrayMethods = (array, option) => {
       resultado = array.reduce((acc, num) => {
         acc + num;
       }, 0);
-      resultado = resultado / array.length;
       break;
+      resultado = resultado / array.length;
     case 4:
       // A ordem crescente dos numeros
       resultado = array.sort((a, b) => a - b);
-      break;
     case 5:
       // Todos os numeros multiplicados por 2
       resultado = array.map((numero) => {
         return numero * 2;
       });
-      break;
+      return array;
   }
-  return resultado;
 };
 
 const listaNumeros = [12, 5, 3, 9];
@@ -277,20 +275,16 @@ const listaNumeros = [12, 5, 3, 9];
 console.log(arrayMethods(listaNumeros, 2));
 
 // Crie uma função que retorne a quantidade de itens de um array
-
-const qtdItensArray = (array) => {
-  return array.length;
-};
+// (não pode usar length)
 
 // Crie uma função que retorne todos os números pares deste array [1,2,3,4,5,6,7,8,9,10]
-
-const numerosPares = (array) => {
-  return array.filter((n) => n % 2 === 0);
-};
+// (não pode usar filter)
 
 // Crie uma função que transforme frases de snake_case para camelCase
+// (não pode usar replace, split, join)
 
-// Crie uma função que retorne "true" caso todos os itens de um array obedecerem a uma condição
+// Crie uma função que retorne "true" caso todos os itens de um array obedecerem a uma condição 
+// (não pode usar map, every)
 
 // Crie uma função em que verifica a força da senha:
 // - Letra Maiuscula
