@@ -360,8 +360,8 @@ const contraCheque = () => {
       Nome: ${funcionario.nome}
       Matricula: ${funcionario.matricula}
       Salario Bruto: R$${funcionario.salarioBruto}
-      Dedução INSS: R$${funcionario.deducao.toFixed(2)}
-      Salário Líquido: R$${funcionario.salarioLiquido.toFixed(2)}
+      Dedução INSS: ${funcionario.deducao}
+      Salário Líquido: ${funcionario.salarioLiquido}
       `);
   })
 };

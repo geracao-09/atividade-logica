@@ -162,9 +162,9 @@ const troca = () => {
 function removerVogais(str) {
   return str.replace(/[aeiouAEIOU]/g, "");
 }
-// let frase = readline.question("Digite uma frase para remover as vogais: ");
-// let resultado = removerVogais(frase);
-// console.log("frase sem vogais:", resultado);
+let frase = readline.question("Digite uma frase para remover as vogais: ");
+let resultado = removerVogais(frase);
+console.log("frase sem vogais:", resultado);
 
 // Faça uma função em que receba três argumentos
 // Dois números
@@ -307,63 +307,5 @@ const numerosPares = (array) => {
 // Escrever um programa para ler 5 horários. Validar cada horário fornecendo através de
 // repetição. Escrever cada um deles no formato HH.MM.SS.
 
-const horarios = () => {
-  let listasDeHorarios = [];
-
-  while (listasDeHorarios.length < 5) {
-    const registro = readline.question("Digite um horário (HH.MM.SS)");
-    const arrayDeHorario = registro.split(".").map(Number);
-    if (arrayDeHorario.length !== 3) {
-      console.log("Registro inválido.");
-      continue;
-    }
-
-    const [horas, minutos, segundos] = arrayDeHorario;
-
-    if (horas >= 0 && horas <= 23 && minutos >= 0 && minutos <= 59 && segundos >= 0 && segundos <= 59) {
-      listasDeHorarios.push({ horas, minutos, segundos });
-      console.log("Horário registrado.");
-    }
-  }
-
-  console.table(listasDeHorarios);
-};
-
-// 20. Uma indústria faz a folha mensal de pagamentos de seus 80 empregados baseada no seguinte: existe uma tabela com os dados de cada funcionalidade: matrícula, nome e salário bruto. Escreva um programa que leia e processe a tabela e emita (escreva na tela), cada funcionário, seu contracheque, cujo formato é dado a seguir:
-// Matrícula:
-// Nome:
-// Salário bruto:
-// Dedução INSS:
-// Salário líquido:
-// (Dicas: desconto de 12%, salário líquido é a diferença entre salário bruto e a redução do
-// INSS).
-
-const contraCheque = () => {
-  const listaFuncionarios = [];
-  let continuar = true;
-
-  while (continuar) {
-    const registro = readline.question("Digite o nome e sobrenome, matricula e salario bruto (separados por ,)");
-    const [nome, matriculaStr, salarioBrutoStr] = registro.split(",");
-    const matricula = parseInt(matriculaStr);
-    const salarioBruto = parseFloat(salarioBrutoStr).toFixed(2);
-    const deducao = salarioBruto * 0.12;
-    const salarioLiquido = salarioBruto - deducao;
-
-    listaFuncionarios.push({ nome, matricula, salarioBruto, deducao, salarioLiquido });
-
-    continuar = readline.keyInYNStrict("Deseja registrar outro?") ? true : false;
-  }
-
-  listaFuncionarios.map((funcionario) => {
-    console.log(`
-      Nome: ${funcionario.nome}
-      Matricula: ${funcionario.matricula}
-      Salario Bruto: R$${funcionario.salarioBruto}
-      Dedução INSS: R$${funcionario.deducao.toFixed(2)}
-      Salário Líquido: R$${funcionario.salarioLiquido.toFixed(2)}
-      `);
-  })
-};
-
-contraCheque()
+const horarios = () => {}
+]

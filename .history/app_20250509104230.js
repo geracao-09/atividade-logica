@@ -329,6 +329,8 @@ const horarios = () => {
   console.table(listasDeHorarios);
 };
 
+horarios();
+
 // 20. Uma indústria faz a folha mensal de pagamentos de seus 80 empregados baseada no seguinte: existe uma tabela com os dados de cada funcionalidade: matrícula, nome e salário bruto. Escreva um programa que leia e processe a tabela e emita (escreva na tela), cada funcionário, seu contracheque, cujo formato é dado a seguir:
 // Matrícula:
 // Nome:
@@ -339,31 +341,7 @@ const horarios = () => {
 // INSS).
 
 const contraCheque = () => {
-  const listaFuncionarios = [];
-  let continuar = true;
-
-  while (continuar) {
     const registro = readline.question("Digite o nome e sobrenome, matricula e salario bruto (separados por ,)");
-    const [nome, matriculaStr, salarioBrutoStr] = registro.split(",");
+    const [nome, matriculaStr, salarioBrutoStr] = registro.split(','); 
     const matricula = parseInt(matriculaStr);
-    const salarioBruto = parseFloat(salarioBrutoStr).toFixed(2);
-    const deducao = salarioBruto * 0.12;
-    const salarioLiquido = salarioBruto - deducao;
-
-    listaFuncionarios.push({ nome, matricula, salarioBruto, deducao, salarioLiquido });
-
-    continuar = readline.keyInYNStrict("Deseja registrar outro?") ? true : false;
-  }
-
-  listaFuncionarios.map((funcionario) => {
-    console.log(`
-      Nome: ${funcionario.nome}
-      Matricula: ${funcionario.matricula}
-      Salario Bruto: R$${funcionario.salarioBruto}
-      Dedução INSS: R$${funcionario.deducao.toFixed(2)}
-      Salário Líquido: R$${funcionario.salarioLiquido.toFixed(2)}
-      `);
-  })
-};
-
-contraCheque()
+}

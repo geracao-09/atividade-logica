@@ -340,8 +340,7 @@ const horarios = () => {
 
 const contraCheque = () => {
   const listaFuncionarios = [];
-  let continuar = true;
-
+  
   while (continuar) {
     const registro = readline.question("Digite o nome e sobrenome, matricula e salario bruto (separados por ,)");
     const [nome, matriculaStr, salarioBrutoStr] = registro.split(",");
@@ -354,16 +353,4 @@ const contraCheque = () => {
 
     continuar = readline.keyInYNStrict("Deseja registrar outro?") ? true : false;
   }
-
-  listaFuncionarios.map((funcionario) => {
-    console.log(`
-      Nome: ${funcionario.nome}
-      Matricula: ${funcionario.matricula}
-      Salario Bruto: R$${funcionario.salarioBruto}
-      Dedução INSS: R$${funcionario.deducao.toFixed(2)}
-      Salário Líquido: R$${funcionario.salarioLiquido.toFixed(2)}
-      `);
-  })
 };
-
-contraCheque()
