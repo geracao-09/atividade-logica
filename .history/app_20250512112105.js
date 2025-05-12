@@ -382,10 +382,9 @@ const aluguelCarros = () => {
     return;
   }
 
-  const total = precoAluguelDia * diasAluguel + KmPercorridos * precoKm;
-  console.log(`Dia(s) de uso: ${diasAluguel}, onde o preço total a ser pago é de: R$ ${total.toFixed(2)}}`)
+  const total = precoAluguelDia + (KmPercorridos * precoKm);
+  console
 }
-//aluguelCarros()
 
 
 
@@ -398,86 +397,6 @@ const aluguelCarros = () => {
 // A media dos numeros
 // A ordem crescente dos numeros
 // Todos os numeros multiplicados por 2
-
-const myFunc = () => {
-    
-  const readline = require('readline').createInterface({
-      input: process.stdin,
-      output: process.stdout
-  });
-
-  readline.question('Digite 5 números separados por espaços: ', arrayNumber => {
-
-      // Converte a string de entrada em um array de números
-      const numbers = arrayNumber.split(' ').map(Number);
-      // Soma os números
-      let sum = 0;
-      for (let i = 0; i < numbers.length; i++) {
-          sum += numbers[i];
-      }
-      // Números pares dentro da array
-      const newArray = [];
-      for (let i = 0; i < numbers.length; i++) { // Corrigido para percorrer todo o array
-          if (numbers[i] % 2 === 0) {
-              newArray.push(numbers[i]);
-          }
-      }
-
-      // Média dos números
-      const average = sum / numbers.length;
-
-      // Ordem crescente os numeros
-
-      //const ordemNumber = [...numbers].sort((a, b) => a - b);
-
-      const ordemNumber = [...numbers]; // Cria uma cópia do array original
-
-      for (let i = 0; i < ordemNumber.length - 1; i++) {
-
-          for (let j = i + 1; j < ordemNumber.length; j++) {
-
-              if (ordemNumber[i] > ordemNumber[j]) {
-                  const temp = ordemNumber[i];
-                  ordemNumber[i] = ordemNumber[j];
-                  ordemNumber[j] = temp;
-              }
-          }
-      }
-
-
-      // Exibe os resultados
-      console.log(`Soma dos números: ${sum}`);
-      console.log(`Exibir o(s) número(s) pares: ${newArray}`);
-      console.log(`Média dos números: ${average}`);
-      console.log(`Números em ordem crescente: ${ordemNumber}`);
-
-      /*
-      Se numbers fosse [3, 1, 2]:
-
-      i = 0, numbers[i] = 3
-      j = 1, numbers[j] = 1. 3 > 1 é verdadeiro.
-      Troca: numbers vira [1, 3, 2].
-      ordemNumber.push(numbers[i]) -> ordemNumber.push(1). ordemNumber é [1].
-      j = 2, numbers[j] = 2. numbers[i] agora é 1. 1 > 2 é falso. Nenhuma troca.
-      i = 1, numbers[i] = 3 (lembre-se que numbers é [1, 3, 2])
-      j = 2, numbers[j] = 2. 3 > 2 é verdadeiro.
-      Troca: numbers vira [1, 2, 3].
-      ordemNumber.push(numbers[i]) -> ordemNumber.push(2). ordemNumber é [1, 2].
-      i = 2, numbers[i] = 3. Loop interno não executa pois j começaria em 3, que não é menor que numbers.length (que é 3).
-      Ao final:
-
-      numbers será [1, 2, 3] (corretamente ordenado).
-      ordemNumber será [1, 2].
-      */
-      // Fim do readline
-      readline.close();
-  });
-};
-
-// Chama a função principal para iniciar o programa
-myFunc();
-
-
 
 const arrayMethods = (array, option) => {
   let resultado;
@@ -609,4 +528,4 @@ const contraCheque = () => {
   })
 };
 
-//contraCheque()
+contraCheque()

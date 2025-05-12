@@ -303,56 +303,9 @@ const joKenPo = () => {
 
 // Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse 80 Km, exiba uma mensagem dizendo que o usuário foi multado. Nesse caso, exiba o valor damulta, cobrando R$ 5,00 por cada Km acima da velocidade permitida.
 
-const checarVelocidade = () => {
-const velocidade = readline.questionInt( 'Qual a velocidade do carro em KM ?')
-
-if (velocidade > 80) {
-  const multa = (velocidade -80) *5;
-  console.log(`Voçê foi multado ! O valor da sua multa é R$ ${multa.toFixed(2)}`);
-}
-else {
-  console.log ("voçe esta no limite de velocidade permitido")
-}
-
-} 
-//checarVelocidade();
+fun
 
 // Escreva um programa para calcular a redução do tempo de vida de um fumante. Pergunte a quantidade de cigarros fumados por dias e quantos anos ele já fumou. Considere que um fumante perde 10 min de vida a cada cigarro. Calcule quantos dias de vida um fumante perderá e exiba o total em dias.
-
-const proerd =  () => {
-  const cigarro = readline.question("Quantos cigarros vc fuma num dia?");
-  const anos  = readline.question("Quantos anos vc fuma");
-
-  const dias = 365 * anos;
-  const minutosPerdidos = cigarro * 10 * dias;
-
-  const diasPerdidos = minutosPerdidos / (24 * 60)
-
-  console.log(`O fuamnte perderá ${diasPerdidos} dias de vida`)
-}
-
-//proerd();
-
-
-const calcularVidaPerdida = () => {
-  const cigarrosPorDia = parseInt (readline.question ("Quantos cigarros voce fuma"));
-  const anosFumando = parseInt (readline.question ("Quantos anos"));
-
-  const minutosPorcigarro = 10;
-  const diasPorAno = 365;
-
-  const totalCigarros = cigarrosPorDia * anosFumando * diasPorAno;
-  const totalMinutosPerdidos = totalCigarros * minutosPorcigarro;
-  const diasPerdidos = totalMinutosPerdidos / (60 * 24);
-
-  console.log (`Você perdeu ${diasPerdidos.toFixed(2)} dias de vida`);
-}
-
-calcularVidaPerdida();
-
-
-
-
 
 // Uma empresa de aluguel de carros precisa cobrar pelos seus serviços. O aluguel de um carro popular custa R$ 90,00 por dia e um carro de luxo custa R$ 150,00. Além disso, o cliente paga por Km percorrido. Faça um programa que leia o tipo de carro alugado (popular ou luxo), quantos dias de aluguel e quantos Km foram percorridos. No final, mostre o preço a ser pago de acordo com os dados a seguir:
 
@@ -363,34 +316,6 @@ calcularVidaPerdida();
 // Até 200 Km percorridos: R$ 0,30 por Km
 // Acima de 200 Km percorridos: R$ 0,25 por Km
 
-const aluguelCarros = () => {
-  const tipoCarro = readline.question("Digite o tipo de carro (popular ou luxo)").toLowerCase();
-  const diasAluguel = readline.questionInt("Digite a quantidade de dias de aluguel: ");
-  const KmPercorridos = readline.questionInt("Digite a quantidade de quilometros percorridos: ");
-
-  let precoAluguelDia = 0;
-  let precoKm = 0;
-
-  if (tipoCarro === "popular") {
-    precoAluguelDia = 90;
-    precoKm = KmPercorridos <= 100 ? 0.20 : 0.10;
-  } else if (tipoCarro === "luxo") {
-    precoAluguelDia = 150;
-    precoKm = KmPercorridos <= 200 ? 0.30 : 0.25;
-  } else {
-    console.log("Tipo de carro inválido!");
-    return;
-  }
-
-  const total = precoAluguelDia * diasAluguel + KmPercorridos * precoKm;
-  console.log(`Dia(s) de uso: ${diasAluguel}, onde o preço total a ser pago é de: R$ ${total.toFixed(2)}}`)
-}
-//aluguelCarros()
-
-
-
-
-
 // BONUS:
 // Escreva uma função que receba uma array  de numeros como argumento, a partir dela, retorne :
 // A soma dos numeros
@@ -398,86 +323,6 @@ const aluguelCarros = () => {
 // A media dos numeros
 // A ordem crescente dos numeros
 // Todos os numeros multiplicados por 2
-
-const myFunc = () => {
-    
-  const readline = require('readline').createInterface({
-      input: process.stdin,
-      output: process.stdout
-  });
-
-  readline.question('Digite 5 números separados por espaços: ', arrayNumber => {
-
-      // Converte a string de entrada em um array de números
-      const numbers = arrayNumber.split(' ').map(Number);
-      // Soma os números
-      let sum = 0;
-      for (let i = 0; i < numbers.length; i++) {
-          sum += numbers[i];
-      }
-      // Números pares dentro da array
-      const newArray = [];
-      for (let i = 0; i < numbers.length; i++) { // Corrigido para percorrer todo o array
-          if (numbers[i] % 2 === 0) {
-              newArray.push(numbers[i]);
-          }
-      }
-
-      // Média dos números
-      const average = sum / numbers.length;
-
-      // Ordem crescente os numeros
-
-      //const ordemNumber = [...numbers].sort((a, b) => a - b);
-
-      const ordemNumber = [...numbers]; // Cria uma cópia do array original
-
-      for (let i = 0; i < ordemNumber.length - 1; i++) {
-
-          for (let j = i + 1; j < ordemNumber.length; j++) {
-
-              if (ordemNumber[i] > ordemNumber[j]) {
-                  const temp = ordemNumber[i];
-                  ordemNumber[i] = ordemNumber[j];
-                  ordemNumber[j] = temp;
-              }
-          }
-      }
-
-
-      // Exibe os resultados
-      console.log(`Soma dos números: ${sum}`);
-      console.log(`Exibir o(s) número(s) pares: ${newArray}`);
-      console.log(`Média dos números: ${average}`);
-      console.log(`Números em ordem crescente: ${ordemNumber}`);
-
-      /*
-      Se numbers fosse [3, 1, 2]:
-
-      i = 0, numbers[i] = 3
-      j = 1, numbers[j] = 1. 3 > 1 é verdadeiro.
-      Troca: numbers vira [1, 3, 2].
-      ordemNumber.push(numbers[i]) -> ordemNumber.push(1). ordemNumber é [1].
-      j = 2, numbers[j] = 2. numbers[i] agora é 1. 1 > 2 é falso. Nenhuma troca.
-      i = 1, numbers[i] = 3 (lembre-se que numbers é [1, 3, 2])
-      j = 2, numbers[j] = 2. 3 > 2 é verdadeiro.
-      Troca: numbers vira [1, 2, 3].
-      ordemNumber.push(numbers[i]) -> ordemNumber.push(2). ordemNumber é [1, 2].
-      i = 2, numbers[i] = 3. Loop interno não executa pois j começaria em 3, que não é menor que numbers.length (que é 3).
-      Ao final:
-
-      numbers será [1, 2, 3] (corretamente ordenado).
-      ordemNumber será [1, 2].
-      */
-      // Fim do readline
-      readline.close();
-  });
-};
-
-// Chama a função principal para iniciar o programa
-myFunc();
-
-
 
 const arrayMethods = (array, option) => {
   let resultado;
@@ -609,4 +454,4 @@ const contraCheque = () => {
   })
 };
 
-//contraCheque()
+contraCheque()
